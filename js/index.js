@@ -7,23 +7,23 @@
          $("#mask1").show();
          //关闭视频播放  必须用原生的js控制 jquery不可以
          document.getElementById('wtvideo').pause();
-         $('#wtvideo').css("visibility","hidden")
+         $('#wtvideo').css("display","none");
      })
 
      //点击×隐藏活动说明栏
      $("#cha").click(function () {
          $("#mask1").hide();
-         $("#wtvideo").css("visibility","visible");
+         $('#wtvideo').css("display","block");
+
      })
      //mask2 上点击隐藏当前框  再显示视频
      $("#maskcha2").click(function () {
          $(".mask2").hide();
-         $("#wtvideo").css("visibility","visible");
+         $('#wtvideo').css("display","block");
 
      })
      $("#wtbtn").click(function () {
-         $('#wtvideo').css("visibility","hidden");
-         document.getElementById('wtvideo').pause();
+         $('#wtvideo').css("display","none");
          //当前时间转化成number
          var data1 = Date.parse(new Date());
 
