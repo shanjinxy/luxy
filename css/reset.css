@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* 禁用iPhone中Safari的字号自动调整 */
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    /*设置所有盒子都是以border-box 以边框开始计算 ，使用的是流式布局*/
+    -webkit-box-sizing: border-box; /*兼容主流浏览器-webkit 内核*/
+    box-sizing: border-box;
+    /*清除移动端默认的点击高亮效果*/
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+body {
+    font-size: 14px;
+    color: #333;
+    font-family: "microsoft yahei", "sans-serif";
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #333;
+}
+
+input, textarea {
+    outline: none;
+    border: none;
+    resize: none;
+    /*清除移动端输入框的默认样式*/
+    -webkit-appearance: none;
+}
+
+
+/* 设置HTML5元素为块 */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    display: block;
+}
+
+/* 图片自适应 */
+img {
+    display: block;
+    height: 100%;
+    /*width: 100%;*/
+    -ms-interpolation-mode: bicubic; /*为了照顾ie图片缩放失真*/
+}
+
+
+:focus {
+    outline: 0;
+}
+
+em, i {
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 { /* font-size:100%; */
+    font-family: Microsoft YaHei;
+}
+/*css common 公用*/
+.f_left {
+    float: left;
+}
+
+.f_right {
+    float: right;
+}
+
+.clearfix ::before, .clearfix::after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+
+.m_t10 {
+    margin-top: 10px;
+}
+
+.m_b10 {
+    margin-bottom: 10px;
+}
+
+.m_l10 {
+    margin-left: 10px;
+
+}
+
+.m_r10 {
+    margin-right: 10px;
+}
+
+
+/*主页的样式开启*/

@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+
+body,html {
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+}
+
+
+html {
+    font-size: 50px;
+}
+/*//整体布局*/
+#share-pic{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: block;
+}
+.layout {
+    width: 100%;
+    background: #EC4346 url("../images-wt/bg.jpg");
+    max-width: 750px;
+    min-width: 320px;
+    margin: 0 auto;
+    /*background: #EC4346 url("../images-wt/down-bg1.png");*/
+    background-size:100% 100%;
+    position: relative;
+}
+
+.layout header {
+    width: 100%;
+}
+.layout header img {
+    width: 100%;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+
+}
+.container .videobox {
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    z-index: 0;
+}
+  .container video {
+      width: 100%;
+      position: relative;
+      z-index: 0;
+  }
+
+
+.formbox{
+    padding: 0.65rem 10% 0.1rem 10%;
+}
+
+.formbox input {
+    height: 0.8rem;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 16px;
+    text-align: center;
+    font-family: "microsoft yahei";
+}
+.formbox input[type=button]{
+    margin-top: 0.44rem;
+    background-color: #F5E827;
+    color: #9E1100;
+    font-family: "microsoft yahei";
+
+}
+.container .introduce {
+   padding: 0.22rem 10%;
+}
+.introduce a {
+    font-size: 18px;
+    color: #fff;
+    font-family: "microsoft yahei";
+    font-weight: 600;
+    width: 49%;
+    display: inline-block;
+}
+.introduce a:nth-child(2){
+    text-align: right;
+}
+
+
+/*提示信息*/
+.message p {
+    text-align: center;
+    color:#fff;
+    font-size: 16px;
+   padding: 4% 10%;
+}
+
+/*遮罩层mask1开始*/
+.mask1 {
+    width: 100%;
+    max-width: 750px;
+    min-width: 320px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    z-index:999;
+    background-color: rgba(0,0,0,0.9);
+}
+.mask1 .cha {
+    color: #F5E827;
+    font-size: 28px;
+    position: absolute;
+    top:2%;
+    right:10%;
+}
+.mask1 .title {
+    width: 100%;
+    margin: 6% 0 0 0;
+}
+.mask1 .title img {
+    margin: 0 auto;
+    width: 38%;
+}
+/*文字部分开始*/
+.mask1 .content{
+    padding: 0 10%;
+    color:#fff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+@media screen and (min-width: 320px) {
+    .mask1 .content{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 360px){
+    .mask1 .content{
+        font-size: 14px;
+    }
+}
+
+ .yellow {
+    color:#f5c520;
+}
+.mask1 .content p.big{
+    margin-top: 5px;
+}
+.mask1 a{
+    color: #fff;
+}
+
+/*mask2开始*/
+.mask2{
+    width: 100%;
+    width: 100%;
+    max-width: 750px;
+    min-width: 320px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    z-index:199;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/*mask2 的叉*/
+.mask2 .cha {
+    color: #F5E827;
+    font-size: 19px;
+    position: absolute;
+    top:20%;
+    right:18%;
+}
+.mask2 .text{
+    width: 100%;
+    height: 80%;
+    background:  url("../images-wt/tanchuang.png") no-repeat center center;
+    background-size: contain;
+
+}
+.mask2 .artical{
+    text-align: center;
+    padding-top: 52%;
+    color:#fff;
+}
+
+.mask2 .artical a:nth-child(1){
+    color: #fff;
+}
+
+.mask2 .artical .down {
+    padding-bottom: 2px;
+    border-bottom: 1px solid #fff;
+}
+.mask2 .artical>p:nth-child(2){
+    font-size: 0.44rem;
+    color:#ffec61
+}
+.mask2 .artical>p:nth-child(3){
+    margin-top: 0.2rem;
+}
+.mask2 .artical>p:nth-child(4){
+    margin-top: 0.3rem;
+}
+.mask2 .artical>p:last-child{
+    margin-top: 21%;
+    color: #F5E827
+}
+
+/*mask3开始*/
+.mask3{
+    width: 100%;
+    width: 100%;
+    max-width: 750px;
+    min-width: 320px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    z-index:199;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/*mask3 的叉*/
+.mask3 .cha {
+    color: #F5E827;
+    font-size: 19px;
+    position: absolute;
+    top:20%;
+    right:18%;
+    visibility: visible;
+}
+.mask3 .text{
+    width: 100%;
+    height: 80%;
+    background:  url("../images-wt/tanchuang.png") no-repeat center center;
+    background-size: contain;
+
+}
+
+.mask3 .artical{
+    text-align: center;
+    padding-top: 53%;
+    color:#fff;
+}
+
+.mask3 .artical>p:nth-child(1){
+    font-size: 0.44rem;
+    color:#ffec61;
+    padding-bottom: 0.22rem;
+}
+.mask3 .artical a{
+    color:#fff;
+}
