@@ -36,7 +36,7 @@
         wx.ready(function () {
 
             wx.onMenuShareTimeline({
-                title: "推荐话题--江湖传言",
+                title: "2016年Top10涨跌之最",
                 link: "http:\/\/test.bao.wallstreetcn.com:3000\/web\/subjects\/226?isshare=true\x26winzoom=1",
                 imgUrl: "http:\/\/image.bao.wallstreetcn.com\/FnexLqknMEjXtq7ay3pwdAJ0-Avw",
                 success: function () {
@@ -51,8 +51,8 @@
 
 
             wx.onMenuShareAppMessage({
-                title: "跨年红包大放送，干货放肆买",
-                desc: "选股宝跨年送元宝咯",
+                title: "2016年Top10涨跌之最",
+                desc: "月有阴晴圆缺，股有涨涨跌跌",
                 link: "http:\/\/test.bao.wallstreetcn.com:3000\/web\/subjects\/226?isshare=true\x26winzoom=1",
                 imgUrl: "http:\/\/image.bao.wallstreetcn.com\/FnexLqknMEjXtq7ay3pwdAJ0-Avw",
                 type: '',
@@ -69,8 +69,8 @@
 
 
             wx.onMenuShareQQ({
-                title: "跨年红包大放送，干货放肆买",
-                desc: "选股宝跨年送元宝咯",
+                title: "2016年Top10涨跌之最",
+                desc: "月有阴晴圆缺，股有涨涨跌跌",
                 link: "http:\/\/test.bao.wallstreetcn.com:3000\/web\/subjects\/226?isshare=true\x26winzoom=1",
                 imgUrl: "http:\/\/image.bao.wallstreetcn.com\/FnexLqknMEjXtq7ay3pwdAJ0-Avw",
                 success: function () {
@@ -84,7 +84,7 @@
             });
 
             wx.onMenuShareTimeline({
-                title: "跨年红包大放送，干货放肆买", // 分享标题
+                title: "2016年Top10涨跌之最", // 分享标题
                 link: 'http:\/\/test.bao.wallstreetcn.com:3000\/web\/subjects\/226?isshare=true\x26winzoom=1', // 分享链接
                 imgUrl: 'http:\/\/image.bao.wallstreetcn.com\/FnexLqknMEjXtq7ay3pwdAJ0-Avw', // 分享图标
                 success: function () {
@@ -101,13 +101,15 @@
         });
     </script>
     <title>选股宝送元宝了</title>
+    <link rel="stylesheet" href="../../../webLibrary/移动端样式重置/专业网上购物平台品质保障！ - 京东商城_files/layout2015.css">
+    <link rel="stylesheet" href="../../../02wallstreet material/jd/base.css-v=jd201612271841.css">
 
 </head>
 <body>
 <!--share 图片-->
 <img id="share-pic"src="http://i0.hdslb.com/bfs/archive/2b90ec6e4d59a3bf57052c8cd24ab58ad81d075f.jpg_300x300.jpg" alt="选股宝送元宝啦">
 <div class="layout ">
-    <div class="mask1" id="mask1">
+    <div class="mask1" id="mask1" >
         <span class="cha" id="cha">×</span>
         <div class="title">
             <img src="./images-wt/actorTitle.png" alt="">
@@ -132,18 +134,21 @@
 
         </div>
     </div>
-    <div class="mask2">
+    <div class="mask2" style="display: none;">
         <span class="cha" id="maskcha2">x</span>
         <div class="text">
+            <div class="imgbox">
+                <img src="./images-wt/tanchuang1.png" alt="">
+            </div>
             <div class="artical">
                 <p>手机号提交完成</p>
-                <p>恭喜你 &nbsp;获得<i>5</i>元宝</p>
+                <p>恭喜你 &nbsp;获得<i id="baobi">5</i>元宝</p>
                 <p><span class="down"><a href="#">立即下载选股宝查看红包!</a></span></p>
                 <p>想要获得更多的元宝？</p>
                 <p>偷偷告诉你：</p>
                 <p>召集朋友可以获得更多元宝!</p>
-                <p>元宝是什么？怎么用?</p>
             </div>
+            <p class="lasttext">元宝是什么？怎么用?</p>
         </div>
     </div>
     <div class="mask3">
@@ -160,15 +165,16 @@
         <img src="images-wt/title.png">
     </header>
     <div class="container">
+        <img src="./images-wt/title.png" alt="show" class="videoimg">
         <div class="videobox">
             <video id="wtvideo" controls preload="auto" webkit-playsinline poster="./images-wt/title.png">
                 <source src="video/fun.mp4" type="video/mp4">
             </video>
         </div>
         <div class="formbox">
-            <form>
-                <input type="tel" maxlength="11" minlength="11" placeholder="提 交 手 机 号 码" name="tel" id='wttel'><br/>
-                <input type="button" class="wtbtn" value="立 即 领 取" id="wtbtn"/>
+            <form action="javascript:;" method='get' class="js-form">
+                <input type="text" placeholder="提 交 手 机 号 码" name="mobile"  required  class="js-mobile"><br/>
+                <input type="submit" class="wtbtn" value="立 即 领 取" id="wtbtn"/>
             </form>
         </div>
         <div class="introduce">
@@ -188,15 +194,25 @@
         i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        function loadGoogleAPI() {
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            setTimeout(function () {
+                m.parentNode.insertBefore(a, m)
+                ga('create', 'UA-64451198-3', 'auto');
+                ga('send', 'pageview');
+            }, 50);
+        }
 
-    ga('create', 'UA-64451198-3', 'auto');
-    ga('send', 'pageview');
+        if (window.addEventListener) {
+            window.addEventListener("load", loadGoogleAPI, false);
+        }
+        else if (window.attachEvent) {
+            window.attachEvent("onload", loadGoogleAPI);
+        }
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 </script>
 </body>
