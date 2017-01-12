@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-body, html {
-    width: 100%;
-    min-height: 100%;
+body,html {
     height: 100%;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 
@@ -45,7 +45,6 @@ html {
     min-width: 320px;
     min-height: 100%;
     margin: 0 auto;
-    /*background: #EC4346 url("../images-wt/down-bg1.png");*/
     background-size: 100% 100%;
     position: relative;
 }
@@ -55,17 +54,31 @@ html {
 }
 
 .layout header img {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
 }
 
+.layout .contenttext {
+    padding: 0.05rem 8.5%;
+}
+.contenttext p {
+    padding: 0.05rem 0.05rem;
+    text-align: center;
+    font-size: 0.16rem;
+    background-color: #DC3336;
+}
+.contenttext span{
+    color: #fff;
+}
 .container {
     width: 100%;
     height: 100%;
 
+
 }
 
 .container .videobox {
-    width: 80%;
+    width: 83%;
     position: relative;
     margin: 0 auto;
     z-index: 0;
@@ -85,14 +98,19 @@ html {
 }
 
 .formbox {
-    padding: 0.65rem 10% 0.1rem 10%;
+    padding: 0 10% 0.1rem 10%;
 }
+.formbox p:first-child {
+    padding: 0.05rem 0;
+    text-align: center;
+    font-size: 0.16rem;
 
+}
 .formbox input {
     /*修改rem值*/
     height: 0.4rem;
     width: 100%;
-    font-size: 18px;
+    font-size:0.18rem;
     border-radius: 16px;
     text-align: center;
     font-family: "microsoft yahei";
@@ -100,45 +118,64 @@ html {
 
 .formbox input[type=submit] {
     /*修改rem值*/
-    margin-top: 0.22rem;
+    margin-top: 0.1rem;
     background-color: #F5E827;
     color: #9E1100;
 
 }
 
+.formbox .fufei{
+    color:#fff;
+    /*margin-top: 0.2rem;*/
+    text-decoration: underline;
+    font-size: 0.18rem;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+
+}
+
 .container .introduce {
-    padding: 0.22rem 10%;
+    padding: 0.1rem 10%;
+    padding-bottom: 0.5rem;
 }
 
 .introduce a {
-    font-size: 18px;
-    color: #fff;
-    font-family: "microsoft yahei";
-    font-weight: 600;
+    font-size: 0.18rem;
+    color: #0A0101;
     width: 49%;
     display: inline-block;
+    text-decoration: underline;
 }
 
 .introduce a:nth-child(2) {
     text-align: right;
 }
 
-/*提示信息*/
-.message p {
-    text-align: center;
-    color: #fff;
-    font-size: 16px;
-    padding: 4% 10%;
+.message {
+    line-height: 1.5;
+   position: absolute;
+    top:0.1rem;
+    right:2px;
+    background-color: rgba(0,0,0,0.6);
+    padding: 2px 10px;
+    border-radius: 18px;
 }
 
+/*提示信息*/
+
+.message p:first-child{
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+}
 /*遮罩层mask1开始*/
 .mask1 {
     width: 100%;
     max-width: 750px;
     min-width: 320px;
-    height: 100%;
+    min-height: 100%;
     margin: 0 auto;
-    overflow: hidden;
     display: none;
     position: absolute;
     z-index: 999;
@@ -165,34 +202,37 @@ html {
 
 /*文字部分开始*/
 .mask1 .content {
-    padding: 0 10%;
+    padding: 0 5%;
+    padding-bottom: 0.5rem;
     color: #fff;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: .14rem;
+    line-height: 1.8;
 }
-
-@media screen and (min-width: 320px) {
-    .mask1 .content {
-        font-size: 12px;
-    }
-}
-
-@media screen and (min-width: 360px) {
-    .mask1 .content {
-        font-size: 14px;
-    }
+.mask1 .content .toptext {
+   margin-bottom: 5px;
 }
 
 .yellow {
     color: #f5c520;
 }
-
+.huanhang {
+    padding-top: 0.2rem;
+}
+.fufei{
+    display: block;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+}
 .mask1 .content p.big {
     margin-top: 5px;
+    font-weight: 700;
 }
-
+.mask1 .content p:last-child{
+    text-align: center;
+    margin-top: 0.2rem;
+}
 .mask1 a {
-    color: #fff;
+    color: #f5c520;
 }
 
 /*mask2开始*/
@@ -203,7 +243,7 @@ html {
     height: 100%;
     margin: 0 auto;
     overflow: hidden;
-    /*display: none;*/
+    display: none;
     position: absolute;
     z-index: 199;
     background-color: rgba(0, 0, 0, 0.9);
@@ -215,16 +255,16 @@ html {
     font-size: 0.30rem;
     position: absolute;
     z-index: 999;
-    top: 12%;
+    top: 10%;
     right: 18%;
 }
 
 .mask2 .text {
-    top:6%;
+    top:0.5rem;
     position: relative;
     /*修改二处*/
     width: 100%;
-    height: 60%;
+    height: 5rem;
     /*background: url("../images-wt/tanchuang.png") no-repeat center center;*/
     background-size: 100% 100%;
 
@@ -232,29 +272,31 @@ html {
 }
 .text .imgbox{
     width: 100%;
-    z-index: -1;
+    z-index: 1;
     position: absolute;
 }
 .text .imgbox img{
-    width: 90%;
+    width: 96%;
     margin: 0 auto;
 }
 .text .lasttext{
     position: absolute;
+    z-index: 9999;
+    display: block;
     color: #ffec61;
     font-size: 0.14rem;
-    bottom:0.8rem;
+    bottom:0;
     left:50%;
     transform: translateX(-50%);
 }
 .mask2 .artical {
+    z-index:2;
     width: 100%;
     font-size: 0.14rem;
     text-align: center;
     color: #fff;
-    position: relative;
-    top: 45%;
-    transform: translateY(-50%);
+    position: absolute;
+    top:28%;
 
 }
 
@@ -302,7 +344,7 @@ html {
 .mask3 .cha {
     color: #F5E827;
     font-size: 19px;
-    z-index: 99;
+    z-index: 1999;
     position: absolute;
     top: 20%;
     right: 18%;
@@ -324,7 +366,7 @@ html {
 }
 
 .mask3 .artical > p:nth-child(1) {
-    font-size: 0.44rem;
+    font-size: 0.22rem;
     color: #ffec61;
     padding-bottom: 0.22rem;
 }

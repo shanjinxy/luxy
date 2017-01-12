@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="user">user</div>
+<div id="content">1000</div>
+<div id="name" data-test="${后台传过来的数据}"></div>
+<span id="music-latch" class="musique"
+
+      data-date="2013"
+
+      data-genre="Electronic"
+
+      data-album="Settle (Deluxe)"
+
+      data-artist="Disclosure"
+
+      data-composer="Howard Lawrence & Guy Lawrence">
+
+Latch (feat. Sam Smith)
+
+</span>
+<h2 id="food-pkd" class="food"
+
+    data-en="Peking Duck"
+
+    data-available
+
+    data-ja="北京ダック"
+
+    data-fr="Canard laqué de Pékin"
+
+    data-de="Pekingente">
+
+    北京烤鸭
+
+</h2>
+
+<script src="./js/jquery.min.js"></script>
+<script>
+    $(function () {
+        var idContent = $('div').attr('id');
+        var num = 1000;
+        var timer = setInterval(function () {
+            num = num + 100;
+            $("#content").html(num);
+        }, 1000)
+
+        var dataTest = $("#name").data('test')
+
+        var album = document.getElementById("music-latch").getAttribute("data-album");
+
+        console.log(album);
+
+
+//set
+        document.getElementById("food-pkd").setAttribute("data-en","Beijing Stuffed Duck");
+    })
+
+    (function am() {
+        img.animate({"opacity":1},1200,function () {
+            img.animate({"opacity":0.2},1200,am);
+        })
+    })();
+//    循环调用animate方法执行动画
+</script>
+</body>
+</html>
