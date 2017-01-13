@@ -12,8 +12,14 @@ html {
     font-size: 100px;
 }
 @media screen and (min-width: 320px) {
-    html{
+    html {
         font-size: 75px;
+    }
+}
+/*修改第三处媒体查询*/
+@media screen and (min-width: 360px){
+    html{
+        font-size: 85px;
     }
 }
 @media screen and (min-width: 375px){
@@ -28,7 +34,7 @@ html {
 }
 
 
-/*修改第三处媒体查询*/
+
 
 /*//整体布局*/
 #share-pic {
@@ -54,7 +60,8 @@ html {
 }
 
 .layout header img {
-    width: 90%;
+    /*1.13 修改一处*/
+    width: 98%;
     margin: 0 auto;
 }
 
@@ -154,8 +161,8 @@ html {
 
 .message {
     line-height: 1.5;
-   position: absolute;
-    top:0.1rem;
+    position: absolute;
+    top:5px;
     right:2px;
     background-color: rgba(0,0,0,0.6);
     padding: 2px 10px;
@@ -283,16 +290,19 @@ html {
     position: absolute;
     z-index: 9999;
     display: block;
-    color: #ffec61;
-    font-size: 0.14rem;
+    /*color: #ffec61;*/
+    font-size: 0.16rem;
     bottom:0;
     left:50%;
     transform: translateX(-50%);
 }
+.text .lasttext .download {
+    color:#fff;
+}
 .mask2 .artical {
     z-index:2;
     width: 100%;
-    font-size: 0.14rem;
+    font-size: 0.16rem;
     text-align: center;
     color: #fff;
     position: absolute;
@@ -304,25 +314,27 @@ html {
     color: #fff;
 }
 
-.mask2 .artical .down {
-    padding-bottom: 2px;
-    border-bottom: 1px solid #fff;
-}
 
 .mask2 .artical > p:nth-child(2) {
     /*修改字体大小 */
     font-size: 0.22rem;
-    color: #ffec61
-}
-
-.mask2 .artical > p:nth-child(3) {
-    margin-top: 0.2rem;
-}
-
-.mask2 .artical > p:nth-child(4) {
+    color: #ffec61;
     margin-top: 0.3rem;
 }
 
+
+.mask2 .artical > p:nth-child(3) {
+    margin-top: 0.6rem;
+    font-size: 0.18rem;
+}
+
+.mask2 .artical > p:nth-child(4) {
+    /*margin-top: 0.2rem;*/
+}
+.mask2 .boldfive{
+    font-size: 0.18rem;
+    color: #ffec61;
+}
 
 
 /*mask3开始*/

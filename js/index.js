@@ -1,9 +1,6 @@
 $(function () {
 
 
-    // setTimeout(function () {
-    //     $(".message").fadeOut(1000).delay(2000).fadeIn(1000)
-    // },3000)
 
     // 发送ga 报告
 
@@ -86,14 +83,14 @@ $(function () {
             alert("手机号码有误，请重填");
             return false;
         }
-        var data1 = Date.parse(new Date());
-        var data2 = Date.parse("2017.1.21 18:00:00");
-
-        if (data2 - data1 < 0) {
-            $(".mask3").show();
-            $(".videobox video").pause();
-            return false;
-        }
+        // var data1 = Date.parse(new Date());
+        // var data2 = Date.parse("2017.1.21 18:00:00");
+        //
+        // if (data2 - data1 < 0) {
+        //     $(".mask3").show();
+        //     $(".videobox video").pause();
+        //     return false;
+        // }
         //点击领取元宝，发送请求
         $(".mask2").show();
         $('#wtvideo').css("display", "none");
