@@ -1,33 +1,31 @@
 $(function () {
 
-
-
     // 发送ga 报告
 
     var wtvideo = document.getElementById("wtvideo");
-    wtvideo.addEventListener('click',function () {
-        console.log("视频被点击")
-            if (wtvideo.paused) {
-                wtvideo.play();
-            } else  {
-                wtvideo.pause();
-            }
-
-            ga('send', 'event', {
-                eventCategory: '跨年红包大放送视频点击',
-                eventAction: 'click',
-                eventLabel: '跨年红包大放送'
-            })
-
-    },false)
-
-    $(".videoimg").click(function () {
-        ga('send', 'event', {
-            eventCategory: '跨年红包大放送视频点击',
-            eventAction: 'click',
-            eventLabel: '跨年红包大放送'
-        })
-    })
+    // wtvideo.addEventListener('click',function () {
+    //     console.log("视频被点击")
+    //         if (wtvideo.paused) {
+    //             wtvideo.play();
+    //         } else  {
+    //             wtvideo.pause();
+    //         }
+    //
+    //         ga('send', 'event', {
+    //             eventCategory: '跨年红包大放送视频点击',
+    //             eventAction: 'click',
+    //             eventLabel: '跨年红包大放送'
+    //         })
+    //
+    // },false)
+    //
+    // $(".videoimg").click(function () {
+    //     ga('send', 'event', {
+    //         eventCategory: '跨年红包大放送视频点击',
+    //         eventAction: 'click',
+    //         eventLabel: '跨年红包大放送'
+    //     })
+    // })
 
     $(".download").click(function (e) {
         e.preventDefault();
@@ -42,6 +40,24 @@ $(function () {
         }, 500)
     })
 
+    // 右上角动态显示电话号码js
+    var messageCount = document.querySelector(".message-count");
+    var arr = ['155****6785', '1875****6144', '131****5654', '130****7878', '189****0656',
+        '187****6158', '185****0725', '132****2300', '181****7918', '187****2381', '186****2920', '185****3057',
+        '158****6615', '178****6377', '186****1761'];
+    var alertLoop = function (i) {
+        if (arr[i]) {
+            messageCount.innerHTML = arr[i];
+            setTimeout(function () {
+                alertLoop(i + 1);
+            }, 6000);
+            if (i === arr.length - 1) {
+                i = 0;
+            }
+        }
+
+    }
+    alertLoop(0);
 
     //显示活动说明栏
     $("#intro").click(function () {
@@ -49,9 +65,9 @@ $(function () {
         //显示活动说明
         $("#mask1").show();
         //关闭视频播放  必须用原生的js控制 jquery不可以
-        document.getElementById('wtvideo').pause();
-        $('#wtvideo').css("display", "none");
-        $(".videoimg").css("display", "block");
+        // document.getElementById('wtvideo').pause();
+        // $('#wtvideo').css("display", "none");
+        // $(".videoimg").css("display", "block");
 
         //显示图片
     })
@@ -59,15 +75,15 @@ $(function () {
     //点击×隐藏活动说明栏
     $("#cha").click(function () {
         $("#mask1").hide();
-        $('#wtvideo').css("display", "block");
-        $(".videoimg").css("display", "none");
+        // $('#wtvideo').css("display", "block");
+        // $(".videoimg").css("display", "none");
 
     })
     //mask2 上点击隐藏当前框  再显示视频
     $("#maskcha2").click(function () {
         $(".mask2").hide();
-        $('#wtvideo').css("display", "block");
-        $(".videoimg").css("display", "none");
+        // $('#wtvideo').css("display", "block");
+        // $(".videoimg").css("display", "none");
 
     })
     $("#lasttext").click(function () {
@@ -98,7 +114,7 @@ $(function () {
         $.ajax({
             type: 'get',
             dataType: 'json',
-            url: 'http://192.168.101.108:3000/api/premium/baobiEvt',
+            // url: 'http://192.168.101.108:3000/api/premium/baobiEvt',
             data: {
                 mobile: mobile_no
             },
