@@ -1,8 +1,8 @@
-$(function() {
+$(function () {
 
     // 发送ga 报告
 
-    var wtvideo = document.getElementById("wtvideo");
+    // var wtvideo = document.getElementById("wtvideo");
     // wtvideo.addEventListener('click',function () {
     //     console.log("视频被点击")
     //         if (wtvideo.paused) {
@@ -26,15 +26,26 @@ $(function() {
     //         eventLabel: '跨年红包大放送'
     //     })
     // })
-
-    $(".download").click(function(e) {
+    // 付费内容点击
+    $(".fufei").click(function (e) {
+        e.preventDefault();
+        ga('send', 'event', {
+            eventCategory: '更多付费内容点击',
+            eventAction: 'click',
+            eventLabel: '跨年红包大放送'
+        })
+        setTimeout(function () {
+            window.location.href = "https://bao.wallstreetcn.com/web/subjects/525?isshare=true";
+        }, 500)
+    })
+    $(".download").click(function (e) {
         e.preventDefault();
         ga('send', 'event', {
             eventCategory: '跨年红包大放送下载',
             eventAction: 'click',
             eventLabel: '跨年红包大放送'
         });
-        setTimeout(function() {
+        setTimeout(function () {
             window.location.href = "http://bao.wallstreetcn.com/static/app.html?from=yuanbao";
         }, 500)
     })
@@ -45,30 +56,33 @@ $(function() {
         '187****6158', '185****0725', '132****2300', '181****7918', '187****2381', '186****2920', '185****3057',
         '158****6615', '178****6377', '186****1761'
     ];
-    var alertLoop = function(i) {
+    var alertLoop = function (i) {
         if (arr[i]) {
             messageCount.innerHTML = arr[i];
-            setTimeout(function() {
+            setTimeout(function () {
                 alertLoop(i + 1);
-            }, 4950);
+            }, 5000);
             if (i === arr.length - 1) {
                 i = 0;
             }
         }
 
     }
-    alertLoop(0);
+
     //  右上角的动画显示
-    $('.message').velocity({
+    $('.message')
+        .velocity({
             translateY: [15, -15],
             opacity: [1, 0]
         }, {
             duration: 400,
             delay: 4600,
-            loop: true
+            //动画循环2次
+            loop:2
         })
-        //显示活动说明栏
-    $("#intro").click(function() {
+
+    //显示活动说明栏
+    $("#intro").click(function () {
         console.log('说明被点击');
         //显示活动说明
         $("#mask1").show();
@@ -81,24 +95,24 @@ $(function() {
     })
 
     //点击×隐藏活动说明栏
-    $("#cha").click(function() {
-            $("#mask1").hide();
-            // $('#wtvideo').css("display", "block");
-            // $(".videoimg").css("display", "none");
+    $("#cha").click(function () {
+        $("#mask1").hide();
+        // $('#wtvideo').css("display", "block");
+        // $(".videoimg").css("display", "none");
 
-        })
-        //mask2 上点击隐藏当前框  再显示视频
-    $("#maskcha2").click(function() {
+    })
+    //mask2 上点击隐藏当前框  再显示视频
+    $("#maskcha2").click(function () {
         $(".mask2").hide();
         // $('#wtvideo').css("display", "block");
         // $(".videoimg").css("display", "none");
 
     })
-    $("#lasttext").click(function() {
+    $("#lasttext").click(function () {
         $(".mask1").show();
         $(".mask2").hide();
     })
-    $("#wtbtn").click(function() {
+    $("#wtbtn").click(function () {
 
         var mobile_no, patt;
         mobile_no = $('.js-mobile').val();
@@ -126,7 +140,7 @@ $(function() {
             data: {
                 mobile: mobile_no
             },
-            success: function(data) {
+            success: function (data) {
                 console.log(data);
                 $(".mask2").show();
                 if (data.HasGet === 1) {
@@ -142,7 +156,7 @@ $(function() {
 
                 }
             },
-            error: function() {
+            error: function () {
                 /* Act on the event */
                 console.log('出错了！');
             }
@@ -150,7 +164,7 @@ $(function() {
 
 
     })
-    $(".mask3>.cha").click(function() {
+    $(".mask3>.cha").click(function () {
         $(".mask3").hide();
     })
 });
