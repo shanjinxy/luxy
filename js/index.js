@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
 
     // 发送ga 报告
 
@@ -27,15 +27,14 @@ $(function () {
     //     })
     // })
 
-    $(".download").click(function (e) {
+    $(".download").click(function(e) {
         e.preventDefault();
         ga('send', 'event', {
-                eventCategory: '跨年红包大放送下载',
-                eventAction: 'click',
-                eventLabel: '跨年红包大放送'
-            }
-        );
-        setTimeout(function () {
+            eventCategory: '跨年红包大放送下载',
+            eventAction: 'click',
+            eventLabel: '跨年红包大放送'
+        });
+        setTimeout(function() {
             window.location.href = "http://bao.wallstreetcn.com/static/app.html?from=yuanbao";
         }, 500)
     })
@@ -44,13 +43,14 @@ $(function () {
     var messageCount = document.querySelector(".message-count");
     var arr = ['155****6785', '1875****6144', '131****5654', '130****7878', '189****0656',
         '187****6158', '185****0725', '132****2300', '181****7918', '187****2381', '186****2920', '185****3057',
-        '158****6615', '178****6377', '186****1761'];
-    var alertLoop = function (i) {
+        '158****6615', '178****6377', '186****1761'
+    ];
+    var alertLoop = function(i) {
         if (arr[i]) {
             messageCount.innerHTML = arr[i];
-            setTimeout(function () {
+            setTimeout(function() {
                 alertLoop(i + 1);
-            }, 6000);
+            }, 4950);
             if (i === arr.length - 1) {
                 i = 0;
             }
@@ -58,9 +58,17 @@ $(function () {
 
     }
     alertLoop(0);
-
-    //显示活动说明栏
-    $("#intro").click(function () {
+    //  右上角的动画显示
+    $('.message').velocity({
+            translateY: [15, -15],
+            opacity: [1, 0]
+        }, {
+            duration: 400,
+            delay: 4600,
+            loop: true
+        })
+        //显示活动说明栏
+    $("#intro").click(function() {
         console.log('说明被点击');
         //显示活动说明
         $("#mask1").show();
@@ -73,24 +81,24 @@ $(function () {
     })
 
     //点击×隐藏活动说明栏
-    $("#cha").click(function () {
-        $("#mask1").hide();
-        // $('#wtvideo').css("display", "block");
-        // $(".videoimg").css("display", "none");
+    $("#cha").click(function() {
+            $("#mask1").hide();
+            // $('#wtvideo').css("display", "block");
+            // $(".videoimg").css("display", "none");
 
-    })
-    //mask2 上点击隐藏当前框  再显示视频
-    $("#maskcha2").click(function () {
+        })
+        //mask2 上点击隐藏当前框  再显示视频
+    $("#maskcha2").click(function() {
         $(".mask2").hide();
         // $('#wtvideo').css("display", "block");
         // $(".videoimg").css("display", "none");
 
     })
-    $("#lasttext").click(function () {
+    $("#lasttext").click(function() {
         $(".mask1").show();
         $(".mask2").hide();
     })
-    $("#wtbtn").click(function () {
+    $("#wtbtn").click(function() {
 
         var mobile_no, patt;
         mobile_no = $('.js-mobile').val();
@@ -118,7 +126,7 @@ $(function () {
             data: {
                 mobile: mobile_no
             },
-            success: function (data) {
+            success: function(data) {
                 console.log(data);
                 $(".mask2").show();
                 if (data.HasGet === 1) {
@@ -134,7 +142,7 @@ $(function () {
 
                 }
             },
-            error: function () {
+            error: function() {
                 /* Act on the event */
                 console.log('出错了！');
             }
@@ -142,7 +150,7 @@ $(function () {
 
 
     })
-    $(".mask3>.cha").click(function () {
+    $(".mask3>.cha").click(function() {
         $(".mask3").hide();
     })
 });
